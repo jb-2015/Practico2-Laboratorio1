@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MortalRace">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="idR" type="String[]" visibility="private" isFinal="true"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="combustible" type="double" visibility="private"/>
+        <Field name="ruedas" type="Rueda[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="patente"/>
+          <Argument type="Rueda[]" name="ruedas"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getPatente" returnType="String" visibility="public"/>
+        <Method name="setPatente" returnType="void" visibility="public">
+          <Argument type="String" name="patente"/>
+        </Method>
+        <Method name="getCombustible" returnType="double" visibility="public"/>
+        <Method name="setCombustible" returnType="void" visibility="public">
+          <Argument type="double" name="combustible"/>
+        </Method>
+        <Method name="getRuedas" returnType="Rueda[]" visibility="public"/>
+        <Method name="setRuedas" returnType="void" visibility="public">
+          <Argument type="Rueda[]" name="ruedas"/>
+        </Method>
+        <Method name="idRueda" returnType="String" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="avanzar" returnType="boolean" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="retroceder" returnType="boolean" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="llenarTanque" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MenuCarrera" package="entidades" visibility="public" xPosition="498.0" yPosition="464.0">
+      <Fields>
+        <Field name="leer" type="Scanner" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="menu1" returnType="int" visibility="public"/>
+        <Method name="menu2" returnType="int" visibility="public"/>
+        <Method name="menu3" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rueda" package="entidades" visibility="public" xPosition="656.0" yPosition="122.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="presion" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="double" name="presion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getPresion" returnType="double" visibility="public"/>
+        <Method name="setPresion" returnType="void" visibility="public">
+          <Argument type="double" name="presion"/>
+        </Method>
+        <Method name="inflar" returnType="void" visibility="public">
+          <Argument type="double" name="p"/>
+        </Method>
+        <Method name="pinchar" returnType="void" visibility="public"/>
+        <Method name="desinflar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MortalRace" package="mortalrace" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="entidades.Auto" target="entidades.Rueda" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
